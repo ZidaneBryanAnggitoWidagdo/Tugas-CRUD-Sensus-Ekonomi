@@ -1,0 +1,82 @@
+erDiagram
+    USERS {
+        int id PK
+        varchar username UK
+        varchar email UK
+        varchar password_hash
+        varchar full_name
+        enum role "admin | operator | pimpinan"
+        tinyint is_active
+        int failed_login_attempts
+        datetime locked_until
+        datetime last_login_at
+        datetime created_at
+        datetime updated_at
+    }
+    WILAYAH {
+        int id PK
+        varchar kode UK "mis. 34.71.01"
+        varchar nama
+        enum tingkat "kota | kecamatan | kelurahan"
+        int parent_id FK "self-reference"
+    }
+    SEKTOR {
+        int id PK
+        varchar kode UK "KBLI section A..K"
+        varchar nama
+        text deskripsi
+    }
+    RESPONDEN {
+        int id PK
+        varchar nik UK "16 digit"
+        varchar nama_lengkap
+        enum jenis_kelamin "L | P"
+        date tanggal_lahir
+        varchar alamat
+        int wilayah_id FK
+        varchar telepon
+        enum pendidikan
+        varchar pekerjaan_utama
+        enum status "aktif | nonaktif"
+        int created_by FK
+        datetime created_at
+        datetime updated_at
+    }
+    USAHA {
+        int id PK
+        varchar kode_usaha UK "USE-2026-0001"
+        varchar nama_usaha
+        int responden_id FK
+        int sektor_id FK
+        int wilayah_id FK
+        varchar alamat_usaha
+        smallint tahun_mulai
+        int jumlah_pekerja
+        decimal omzet_tahunan
+        enum status_usaha "aktif | tutup | baru"
+        text keterangan
+        int created_by FK
+        datetime created_at
+        datetime updated_at
+    }
+    AUDIT_LOG {
+        bigint id PK
+        int user_id FK "ON DELETE SET NULL"
+        varchar username_snapshot
+        varchar aksi "LOGIN | CREATE | UPDATE | ..."
+        varchar entitas
+        int entitas_id
+        text detail
+        varchar ip_address
+        varchar user_agent
+        datetime created_at
+    }
+
+    USERS ||--o{ RESPONDEN : "mencatat"
+    USERS ||--o{ USAHA : "mencatat"
+    USERS ||--o{ AUDIT_LOG : "membangkitkan"
+    WILAYAH ||--o{ RESPONDEN : "menaungi"
+    WILAYAH ||--o{ USAHA : "menaungi"
+    WILAYAH ||--o{ WILAYAH : "induk dari"
+    RESPONDEN ||--o{ USAHA : "memiliki"
+    SEKTOR ||--o{ USAHA : "menggolongkan"
