@@ -1,0 +1,18 @@
+# SISENSUS 2026 — robots.txt
+User-agent: *
+Allow: /index.php
+Allow: /login.php
+Disallow: /app/
+Disallow: /config/
+Disallow: /database/
+Disallow: /templates/
+Disallow: /responden/
+Disallow: /usaha/
+Disallow: /pengguna/
+Disallow: /dashboard.php
+Disallow: /laporan.php
+Disallow: /profil.php
+Disallow: /audit_log.php
+Disallow: /logout.php
+Disallow: /docs/
+Disallow: /tests/

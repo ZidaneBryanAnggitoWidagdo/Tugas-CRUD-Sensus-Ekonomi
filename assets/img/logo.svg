@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Logo SISENSUS">
+  <rect x="2" y="2" width="44" height="44" fill="#0B2E4F"/>
+  <rect x="8"  y="8"  width="8" height="8" fill="#F4F3EE"/>
+  <rect x="20" y="8"  width="8" height="8" fill="#F4F3EE"/>
+  <rect x="32" y="8"  width="8" height="8" fill="#F4F3EE"/>
+  <rect x="8"  y="20" width="8" height="8" fill="#F4F3EE"/>
+  <rect x="20" y="20" width="8" height="8" fill="#C2410C"/>
+  <rect x="32" y="20" width="8" height="8" fill="#F4F3EE"/>
+  <rect x="8"  y="32" width="8" height="8" fill="#F4F3EE"/>
+  <rect x="20" y="32" width="8" height="8" fill="#F4F3EE"/>
+  <rect x="32" y="32" width="8" height="8" fill="#F4F3EE"/>
+</svg>

@@ -1,0 +1,10 @@
+# SISENSUS 2026 — konfigurasi Apache
+Options -Indexes
+
+# Berkas sensitif tidak boleh diakses langsung
+<FilesMatch "^(composer\.(json|lock)|\.gitignore|.*\.md|.*\.sql|.*\.mmd)$">
+  Require all denied
+</FilesMatch>
+
+ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php
