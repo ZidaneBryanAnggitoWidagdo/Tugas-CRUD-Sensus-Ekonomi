@@ -1,0 +1,20 @@
+# Sistem operasi / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Log & runtime
+*.log
+runtime/
+storage/
+
+# Lingkungan (jangan pernah commit kredensial produksi)
+.env
+.env.*
+
+# PHP
+vendor/
+
+# Hasil pengujian lokal
+tests/results/
